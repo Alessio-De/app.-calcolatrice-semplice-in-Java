@@ -1,0 +1,75 @@
+app. Java calcolatrice
+
+import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        // Creiamo un oggetto Scanner per leggere l'input dell'utente
+        Scanner scanner = new Scanner(System.in);
+
+        // Chiediamo all'utente di inserire il primo numero
+        System.out.print("Inserisci il primo numero: ");
+        double num1 = scanner.nextDouble();
+
+        // Chiediamo all'utente di inserire l'operazione
+        System.out.print("Inserisci l'operazione (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        // Chiediamo all'utente di inserire il secondo numero
+        System.out.print("Inserisci il secondo numero: ");
+        double num2 = scanner.nextDouble();
+
+        // Eseguiamo l'operazione richiesta
+        double result;
+        switch (operator) {
+            case '+':
+                // Addizione
+                result = num1 + num2;
+                System.out.println("Il risultato è: " + result);
+                break;
+            case '-':
+                // Sottrazione
+                result = num1 - num2;
+                System.out.println("Il risultato è: " + result);
+                break;
+            case '*':
+                // Moltiplicazione
+                result = num1 * num2;
+                System.out.println("Il risultato è: " + result);
+                break;
+            case '/':
+                // Divisione
+                if (num2 == 0) {
+                    System.out.println("Errore: divisione per zero");
+                } else {
+                    result = num1 / num2;
+                    System.out.println("Il risultato è: " + result);
+                }
+                break;
+            default:
+                System.out.println("Operazione non valida");
+        }
+
+        // Chiudiamo lo scanner
+        scanner.close();
+    }
+}
+
+Descrizione:
+
+Importiamo la classe Scanner per leggere l'input dell'utente.
+Creiamo un oggetto Scanner per leggere l'input dell'utente.
+Chiediamo all'utente di inserire il primo numero.
+Leggiamo il primo numero inserito dall'utente e lo memorizziamo nella variabile num1.
+Chiediamo all'utente di inserire l'operazione da eseguire (+, -, *, /).
+Leggiamo l'operazione inserita dall'utente e la memorizziamo nella variabile operator.
+Chiediamo all'utente di inserire il secondo numero.
+Leggiamo il secondo numero inserito dall'utente e lo memorizziamo nella variabile num2.
+Eseguiamo l'operazione richiesta utilizzando una struttura switch-case:
+Se l'operazione è addizione, eseguiamo num1 + num2 e stampiamo il risultato.
+Se l'operazione è sottrazione, eseguiamo num1 - num2 e stampiamo il risultato.
+Se l'operazione è moltiplicazione, eseguiamo num1 * num2 e stampiamo il risultato.
+Se l'operazione è divisione, controlliamo prima se il divisore è zero (per evitare errori) e, se non lo è, eseguiamo num1 / num2 e stampiamo il risultato.
+Se l'operazione non è valida, stampiamo un messaggio di errore.
+Chiudiamo l'oggetto Scanner per liberare le risorse.
+Questa applicazione Java fornisce una semplice calcolatrice che accetta due numeri e un'operazione, esegue il calcolo e stampa il risultato. Il codice è commentato per spiegare ogni passaggio in modo chiaro e dettagliato.
